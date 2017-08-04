@@ -1,66 +1,19 @@
-@extends('layouts.admin')
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>后台管理系统</title>
+    <link href="{{ asset('/static/insdep/reset.min.css') }}"   rel="stylesheet">
+    <link href="{{ asset('/static/jquery-easyui/themes/bootstrap/easyui.css') }}"   rel="stylesheet">
+    <link href="{{ asset('/static/insdep/icon.css') }}"   rel="stylesheet">
+    <link href="{{ asset('/static/insdep/easyui_full.css') }}"   rel="stylesheet">
+    <link href="{{ asset('/dist/admin/css/login.min.css') }}"  rel="stylesheet">
+</head>
+<body>
 
-@section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Login</div>
-                <div class="panel-body">
-                    <form class="form-horizontal" role="form" method="POST" action="{{ route('admin.login') }}">
-                        {{ csrf_field() }}
-
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">Username</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
-
-                                @if ($errors->has('name'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <div class="checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-8 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Login
-                                </button>
-
-
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-@endsection
+</body>
+<script src="{{ asset('/static/jquery/jquery.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('/static/jquery-easyui/jquery.easyui.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('/static/insdep/insdep-extend.min.js') }}"></script>
+<script src="{{ asset('/dist/admin/js/login.min.js') }}"></script>
+</html>
